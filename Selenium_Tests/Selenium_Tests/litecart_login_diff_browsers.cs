@@ -17,13 +17,13 @@ namespace Selenium_Tests
     public class litecart_login_Edge
     {
         private IWebDriver driver;
-        private WebDriverWait wait;
+
 
         [SetUp]
         public void start()
         {
             driver = new EdgeDriver();
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
         }
 
         [Test]
@@ -47,14 +47,12 @@ namespace Selenium_Tests
     public class litecart_login_FireFox
     {
         private IWebDriver driver;
-        private WebDriverWait wait;
-
+   
         [SetUp]
         public void start()
         {
             driver = new FirefoxDriver();
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-        }
+         }
 
         [Test]
         public void LitecartFireFox()
