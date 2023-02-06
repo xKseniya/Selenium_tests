@@ -20,7 +20,7 @@ namespace Selenium_Tests
         }
 
         [Test]
-        public void LitecartEdge()
+        public void LitecartChrome()
         {
             driver.Url = "http://localhost/litecart/admin/";
             driver.FindElement(By.Name("username")).SendKeys("admin");
