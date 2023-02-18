@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "EMMgJE0jFwCSHzMjwJuX5prFFcmWfZlrecd+obflk9eWq4/zA5hHFVzKcqftGNYxN3jWFRWylfTih/Yk22cvcQ==",
+  "dgSpecHash": "d4N48Pvu05IbHkXLcSA15FN1P60leO+FunQ9TN0/7lh02fjFoMVUb61pFVoXMtJbioPQBCF07Owk+TLk8Lc2XQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Kseniya\\Documents\\GitHub\\Selenium_tests\\Selenium_Tests\\Selenium_Tests\\Selenium_Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kseniya\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
+    "C:\\Users\\Kseniya\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
     "C:\\Users\\Kseniya\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",
     "C:\\Users\\Kseniya\\.nuget\\packages\\microsoft.net.test.sdk\\17.3.2\\microsoft.net.test.sdk.17.3.2.nupkg.sha512",
     "C:\\Users\\Kseniya\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

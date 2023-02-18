@@ -109,3 +109,4 @@ C:\Users\Kseniya\Documents\GitHub\Selenium_tests\Selenium_Tests\Selenium_Tests\o
 C:\Users\Kseniya\Documents\GitHub\Selenium_tests\Selenium_Tests\Selenium_Tests\obj\Debug\net6.0\Selenium_Tests.pdb
 C:\Users\Kseniya\Documents\GitHub\Selenium_tests\Selenium_Tests\Selenium_Tests\obj\Debug\net6.0\Selenium_Tests.genruntimeconfig.cache
 C:\Users\Kseniya\Documents\GitHub\Selenium_tests\Selenium_Tests\Selenium_Tests\obj\Debug\net6.0\ref\Selenium_Tests.dll
+C:\Users\Kseniya\Documents\GitHub\Selenium_tests\Selenium_Tests\Selenium_Tests\bin\Debug\net6.0\SeleniumExtras.WaitHelpers.dll
