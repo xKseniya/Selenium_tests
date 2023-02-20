@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
+using static System.Net.Mime.MediaTypeNames;
 
 
 namespace Selenium_Tests
@@ -71,8 +72,11 @@ namespace Selenium_Tests
             var sale_price_weight = Int32.Parse(sale_price.GetCssValue("font-weight"));
             var full_price_weight = Int32.Parse(full_price.GetCssValue("font-weight"));
 
+            var sale_price_size = Convert.ToDouble(sale_price.GetCssValue("font-size").Trim(new char[] { 'p', 'x' }).Replace(".", ","));
+            var full_price_size = Convert.ToDouble(full_price.GetCssValue("font-size").Trim(new char[] { 'p', 'x' }).Replace(".", ","));
+          
             // Главная страница - акционная цена должна быть крупнее
-            NUnit.Framework.Assert.That(sale_price.Size.Height, Is.GreaterThan(full_price.Size.Height));
+            NUnit.Framework.Assert.That(sale_price_size, Is.GreaterThan(full_price_size));
 
             //Сбор данных для страницы продукта
             driver.Url = "http://localhost/litecart/en/rubber-ducks-c-1/subcategory-c-2/yellow-duck-p-1";
@@ -90,8 +94,12 @@ namespace Selenium_Tests
             var sale_price_weight_p = Int32.Parse(sale_price_p.GetCssValue("font-weight"));
             var full_price_weight_p = Int32.Parse(full_price_p.GetCssValue("font-weight"));
 
+            var sale_price_size_p = Convert.ToDouble(sale_price_p.GetCssValue("font-size").Trim(new char[] { 'p', 'x' }).Replace(".", ","));
+            var full_price_size_p = Convert.ToDouble(full_price_p.GetCssValue("font-size").Trim(new char[] { 'p', 'x' }).Replace(".", ","));
+
+
             // Страница продукта - акционная цена должна быть крупнее
-            NUnit.Framework.Assert.That(sale_price_p.Size.Height, Is.GreaterThan(full_price_p.Size.Height));
+            NUnit.Framework.Assert.That(sale_price_size_p, Is.GreaterThan(full_price_size_p));
 
             // Проверяем, что название товара и цены совпадают на главной странице и странице товара
             NUnit.Framework.Assert.That(mainPage["name"] ==  productPage["name"]);
