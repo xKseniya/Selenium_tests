@@ -83,9 +83,18 @@ namespace Selenium_Tests
             driver.FindElement(By.XPath("//input[@name='prices[USD]']")).SendKeys("40");
             driver.FindElement(By.XPath("//input[@name='prices[EUR]']")).SendKeys("40");
             
+            
+            driver.FindElement(By.XPath("//button[@name='save']")).Click();
             Thread.Sleep(500);
 
-            driver.FindElement(By.XPath("//button[@name='save']")).Click();
+            driver.Url = "http://localhost/litecart/admin/?app=catalog&doc=catalog&category_id=1";
+            var elements = driver.FindElements(By.XPath("//table[@class='dataTable']//tr//td//a"));
+            bool elementExists = false;
+            foreach (IWebElement element in elements)
+            {
+                if (element.GetAttribute("textContent") == "Queen Duck") elementExists = true;
+            }
+            Assert.IsTrue(elementExists);
 
 
 
