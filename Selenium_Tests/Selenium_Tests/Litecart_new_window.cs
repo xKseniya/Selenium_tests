@@ -84,10 +84,7 @@ namespace Selenium_Tests
             foreach (var element in elements)
             {
                 ICollection<string> oldWindows = driver.WindowHandles;
-                element.Click(); // открывает новое окно
-                              // ожидание появления нового окна,
-                              // идентификатор которого отсутствует в списке oldWindows,
-                              // остаётся в качестве самостоятельного упражнения
+                element.Click(); 
                 string newWindow = findNewWindow(driver, oldWindows);
                 driver.SwitchTo().Window(newWindow);
                 Thread.Sleep(1000);

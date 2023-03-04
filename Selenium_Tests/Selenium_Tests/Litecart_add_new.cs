@@ -34,6 +34,15 @@ namespace Selenium_Tests
             driver.FindElement(By.Name("username")).SendKeys("admin");
             driver.FindElement(By.Name("password")).SendKeys("admin");
             driver.FindElement(By.Name("login")).Click();
+
+            // Посчитаем, сколько товаров с нашим именем уже есть в каталоге
+            driver.Url = "http://localhost/litecart/admin/?app=catalog&doc=catalog&category_id=1";
+            var elements = driver.FindElements(By.XPath("//table[@class='dataTable']//tr//td//a"));
+            int elemCount = 0;
+            foreach (IWebElement element in elements)
+            {
+                if (element.GetAttribute("textContent") == "Queen Duck") elemCount++;
+            }
             
             // Заходим в "add new product"
             driver.FindElement(By.XPath("//ul[@id='box-apps-menu']/li[2]/a")).Click();
@@ -87,15 +96,16 @@ namespace Selenium_Tests
             driver.FindElement(By.XPath("//button[@name='save']")).Click();
             Thread.Sleep(500);
 
+            // Проверим, что новый товар с нашим именем появился в админке
             driver.Url = "http://localhost/litecart/admin/?app=catalog&doc=catalog&category_id=1";
-            var elements = driver.FindElements(By.XPath("//table[@class='dataTable']//tr//td//a"));
-            bool elementExists = false;
+            elements = driver.FindElements(By.XPath("//table[@class='dataTable']//tr//td//a"));
+            int newElemCount = 0;
             foreach (IWebElement element in elements)
             {
-                if (element.GetAttribute("textContent") == "Queen Duck") elementExists = true;
+                if (element.GetAttribute("textContent") == "Queen Duck") newElemCount++;
             }
-            Assert.IsTrue(elementExists);
-
+            Assert.AreEqual(newElemCount, elemCount +1);
+            
 
 
         }
